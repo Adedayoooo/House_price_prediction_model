@@ -18,7 +18,7 @@ SCHEMAS_PATH=APP_DIR/"schemas.py"
 UTILS_PATH=APP_DIR/"utils.py"
 
 #Model file
-MODEL_PATH=MODEL_DIR/"knn_based_house_price_model.pkl"
+MODEL_PATH=MODEL_DIR/"rf_house_price_model.pkl"
 
 #Test code files
 TRAIN_PATH=SRC_DIR/"train.py"

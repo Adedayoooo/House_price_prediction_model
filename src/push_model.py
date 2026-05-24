@@ -26,11 +26,11 @@ def push_model_to_huggingface(best_model,repo_name:str,token:str=None):
     joblib.dump(best_model,model_filename)
     logger.info(f"Model saved locally as {model_filename}")
     api = HfApi()
-    api.upload_file(path_or_fileobj=model_filename,path_in_repo=model_filename.name,repo_id=repo_name,repo_type="model",commit_message="Upload trained KNN-based house price prediction model")
+    api.upload_file(path_or_fileobj=model_filename,path_in_repo=model_filename.name,repo_id=repo_name,repo_type="model",commit_message="Upload trained RandomForest house price prediction model")
     logger.info(f"Model successfully pushed to Hugging Face Hub: https://huggingface.co/{repo_name}")
   except Exception as e:
     logger.error(f"Failed to push model to HuggingFace due to the following: {e}")
     raise
   
 if __name__=="__main__": 
-  push_model_to_huggingface(best_model,"KNN Based House Price Prediction Model")
+  push_model_to_huggingface(best_model,"RandomForest House Price Prediction Model")

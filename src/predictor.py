@@ -12,7 +12,7 @@ logger=logging.getLogger(__name__)
 def load_model():
   try:
     root_directory=Path(__file__).parent.parent
-    model_path=root_directory/"model"/"knn_based_house_price_model.pkl"
+    model_path=root_directory/"model"/"rf_house_price_model.pkl"
     logger.info(f"Loading model from {model_path}")
     if model_path.exists():
       with model_path.open('rb') as f:

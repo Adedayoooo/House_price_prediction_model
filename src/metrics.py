@@ -26,5 +26,6 @@ def regression_metrics(y_true,y_pred):
         logger.error(f"An error occurred:{e}")
         raise
 
-if __name__=="__main__":
-    mse,mae,rmse,r2=regression_metrics(y_true,y_pred)
+#if __name__=="__main__":
+ #   mse,mae,rmse,r2=regression_metrics(y_true,y_pred)
+ # Uncomment to test with dummy data
