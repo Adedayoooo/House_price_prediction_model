@@ -86,4 +86,24 @@ def save_model(best_model):
 
 if __name__=="__main__":
   best_model,scaler=training(house_features,target)
+  save_model(best_model)    mse, mae, rmse, r2 = regression_metrics(y_test, y_pred)
+    
+    return best_model, scaler
+    
+  except Exception as e:
+    logger.error(f"An error occurred:{e}")
+    raise
+  
+def save_model(best_model):
+  try:
+    logger.info("Saving best model...")
+    with open("rf_house_price_model.pkl","wb") as f:
+      pickle.dump(best_model,f)
+    logger.info("Model saved as rf_house_price_model.pkl")
+  except Exception as e:
+    logger.error(f"An error occurred:{e}")
+    raise
+
+if __name__=="__main__":
+  best_model,scaler=training(house_features,target)
   save_model(best_model)
